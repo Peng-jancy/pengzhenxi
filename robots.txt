@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pengzhenxi.cn/sitemap.xml
