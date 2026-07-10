@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<meta name="description" content="彭桢熙，电子科技大学学生，软件工程师、作家。代表作品《星河迢迢长明路》，了解彭桢熙的个人经历、作品成果与获奖记录。">
+<meta name="keywords" content="彭桢熙,电子科技大学,软件工程师,作家,星河迢迢长明路,彭桢熙个人主页,Jancy">
+<meta name="author" content="彭桢熙">
+<link rel="canonical" href="https://www.pengzhenxi.com/">
+<!-- Open Graph / 社交分享 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="彭桢熙 - 个人主页">
+<meta property="og:description" content="彭桢熙，电子科技大学学生，软件工程师、作家。代表作《星河迢迢长明路》。">
+<meta property="og:url" content="https://www.pengzhenxi.com/">
+<meta property="og:site_name" content="彭桢熙个人主页">
+<!-- 百度站长验证（部署后替换为你的验证码） -->
+<meta name="baidu-site-verification" content="code-REPLACE_WITH_YOUR_BAIDU_VERIFICATION_CODE">
+<title>彭桢熙（Jancy）— 软件工程师 / 作家 | 个人主页</title>
+<!-- 结构化数据 / Schema.org Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "彭桢熙",
+  "alternateName": "Jancy",
+  "birthDate": "2006-10-10",
+  "birthPlace": "四川省泸州市",
+  "nationality": "中国",
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "电子科技大学" },
+  "jobTitle": ["软件工程师", "作家"],
+  "url": "https://www.pengzhenxi.com/",
+  "sameAs": [
+    "https://github.com/Peng-jancy"
+  ]
+}
+</script>
+<style>
+/* ===== CUSTOM PROPERTIES ===== */
+:root {
+  --sky-top:      #A8CFE4;
+  --sky-mid:      #7DB4D2;
+  --sky-bot:      #4F91B5;
+  --text-primary: #1B2D42;
+  --text-dim:     #5A7894;
+  --gold:         #DA9E32;
+  --gold-bright:  #F0BA50;
+  --gold-dark:    #B87A1E;
+  --teal:         #3D7A9E;
+  --teal-bg:      rgba(61, 122, 158, 0.10);
+  --card-bg:      rgba(255, 255, 255, 0.60);
+  --card-border:  rgba(26, 45, 66, 0.08);
+  --card-hover-bg:rgba(255,255,255,0.82);
+  --card-hover-border: rgba(200, 157, 66, 0.30);
+  --card-shadow:  0 4px 24px rgba(26, 45, 66, 0.06);
+  --card-hover-shadow: 0 8px 40px rgba(26, 45, 66, 0.10);
+  --radius:        10px;
+  --max-w:         780px;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--gold) transparent;
+}
+
+body {
+  background: radial-gradient(ellipse at 50% 25%, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-bot) 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== STARFIELD CANVAS ===== */
+#starfield {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.35s, box-shadow 0.35s;
+}
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(26,45,66,0.06);
+}
+.nav-logo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--gold-dark);
+  outline: none;
+}
+
+/* ===== MAIN ===== */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 0 80px;
+}
+
+.constellation-wrap {
+  width: min(700px, 96vw);
+  margin-bottom: 16px;
+}
+
+.constellation-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Constellation lines --- */
+.cline {
+  stroke: rgba(180, 140, 60, 0.45);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: drawLine 1.4s ease-out forwards;
+}
+.cline:nth-child(1)  { animation-delay: 0.25s; }
+.cline:nth-child(2)  { animation-delay: 0.45s; }
+.cline:nth-child(3)  { animation-delay: 0.55s; }
+.cline:nth-child(4)  { animation-delay: 0.65s; }
+.cline:nth-child(5)  { animation-delay: 0.72s; }
+.cline:nth-child(6)  { animation-delay: 0.78s; }
+.cline:nth-child(7)  { animation-delay: 0.88s; }
+.cline:nth-child(8)  { animation-delay: 0.94s; }
+.cline:nth-child(9)  { animation-delay: 0.98s; }
+
+/* --- Star links --- */
+.star-link {
+  cursor: pointer;
+  outline: none;
+}
+.star-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+/* --- Star group (wraps glow + core) --- */
+.star-g {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.star-link:hover .star-g,
+.star-link:focus-visible .star-g {
+  transform: scale(1.4);
+}
+
+/* --- Glow circles behind stars --- */
+.cglow {
+  fill: rgba(240, 175, 60, 0.28);
+  animation: glowPulse 3.5s ease-in-out infinite;
+}
+.cglow:nth-of-type(1)  { animation-delay: 0.0s; }
+.cglow:nth-of-type(2)  { animation-delay: 0.5s; }
+.cglow:nth-of-type(3)  { animation-delay: 1.0s; }
+.cglow:nth-of-type(4)  { animation-delay: 1.5s; }
+.cglow:nth-of-type(5)  { animation-delay: 2.0s; }
+.cglow:nth-of-type(6)  { animation-delay: 2.5s; }
+.cglow:nth-of-type(7)  { animation-delay: 3.0s; }
+.cglow:nth-of-type(8)  { animation-delay: 0.8s; }
+
+.star-link:hover .cglow,
+.star-link:focus-visible .cglow {
+  fill: rgba(245, 180, 55, 0.65);
+  animation: none;
+}
+
+/* --- Star cores --- */
+.cstar {
+  fill: var(--gold);
+  opacity: 0;
+  animation: starIn 0.5s ease-out forwards;
+}
+.cstar--bright { fill: var(--gold-bright); }
+
+.star-link:nth-of-type(10) .cstar { animation-delay: 0.20s; }
+.star-link:nth-of-type(11) .cstar { animation-delay: 0.34s; }
+.star-link:nth-of-type(12) .cstar { animation-delay: 0.44s; }
+.star-link:nth-of-type(13) .cstar { animation-delay: 0.52s; }
+.star-link:nth-of-type(14) .cstar { animation-delay: 0.62s; }
+.star-link:nth-of-type(15) .cstar { animation-delay: 0.72s; }
+.star-link:nth-of-type(16) .cstar { animation-delay: 0.80s; }
+.star-link:nth-of-type(17) .cstar { animation-delay: 0.90s; }
+
+.star-link:hover .cstar,
+.star-link:focus-visible .cstar {
+  fill: #FFF;
+  filter: drop-shadow(0 0 6px rgba(240,186,80,0.8));
+}
+
+/* --- Star label tooltips --- */
+.star-label {
+  fill: var(--gold-dark);
+  font-size: 13px;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+  text-anchor: middle;
+}
+.star-link:hover .star-label,
+.star-link:focus-visible .star-label {
+  opacity: 1;
+}
+
+.hero-name {
+  font-family: "Noto Serif SC", "STSong", "KaiTi", "SimSun", serif;
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  color: #1A2C40;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.hero-tagline {
+  color: var(--text-dim);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 44px;
+}
+
+.hero-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 22px;
+  border: 1px solid rgba(26,45,66,0.12);
+  border-radius: 24px;
+  transition: all 0.28s;
+  letter-spacing: 0.03em;
+  background: rgba(255,255,255,0.35);
+}
+.hero-links a:hover,
+.hero-links a:focus-visible {
+  color: var(--gold-dark);
+  border-color: rgba(200, 157, 66, 0.45);
+  background: rgba(255,255,255,0.7);
+  outline: none;
+}
+
+.hero-scroll {
+  margin-top: 60px;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  animation: floatDown 2.5s ease-in-out infinite;
+  opacity: 0.45;
+}
+
+/* ===== SECTIONS ===== */
+.section { padding: 90px 0; }
+
+.section-hdr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+.section-hdr span {
+  color: var(--gold-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.section-hdr::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(26,45,66,0.08);
+  margin-top: 1px;
+}
+
+/* ===== ABOUT ===== */
+.about-text {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.95;
+  max-width: 620px;
+}
+.about-text strong { color: var(--text-primary); font-weight: 600; }
+
+/* Info grid (basic info card) */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 0;
+  margin-top: 4px;
+}
+.info-item {
+  display: flex;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(26,45,66,0.05);
+}
+.info-label {
+  color: var(--text-dim);
+  width: 80px;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+}
+.info-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ===== AWARDS ===== */
+.awards-list {
+  max-width: 640px;
+}
+.award-year {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  margin: 28px 0 12px;
+  letter-spacing: 0.05em;
+}
+.award-year:first-child { margin-top: 0; }
+.award-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.award-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 0 9px 16px;
+  border-left: 2px solid rgba(26,45,66,0.08);
+  font-size: 0.93rem;
+  color: var(--text-primary);
+  transition: border-color 0.3s;
+}
+.award-item:hover {
+  border-left-color: var(--gold);
+}
+.award-name {
+  flex: 1;
+  line-height: 1.5;
+}
+.award-from {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ===== SKILLS & EDUCATION GRID ===== */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.35s;
+}
+.card:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-hover-shadow);
+}
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
+}
+.card .subtitle {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.timeline { list-style: none; }
+.timeline li {
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 16px;
+  font-size: 0.93rem;
+  color: var(--text-dim);
+}
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.55;
+}
+.timeline li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 3px; top: 18px;
+  width: 1px;
+  height: calc(100% - 8px);
+  background: rgba(26,45,66,0.10);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 4px;
+  background: var(--teal-bg);
+  color: var(--teal);
+  border: 1px solid rgba(61,122,158,0.15);
+  letter-spacing: 0.02em;
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.35s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-2px);
+}
+.project-card h3 {
+  font-size: 1.06rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.project-card p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 50px 0 60px;
+}
+.footer-border {
+  border-top: 1px solid rgba(26,45,66,0.08);
+  padding-top: 50px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  letter-spacing: 0.03em;
+}
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold-dark);
+  outline: none;
+}
+.footer-copy {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  opacity: 0.5;
+}
+
+/* ===== CONSTELLATION DIVIDER ===== */
+.const-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 20px 0;
+  opacity: 0.35;
+}
+.const-divider span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.const-divider::before,
+.const-divider::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: rgba(26,45,66,0.15);
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== STAR BRAND IN SECTION HEADERS ===== */
+.section-hdr .mini-star {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-right: 4px;
+  animation: miniStarPulse 2.5s ease-in-out infinite;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes drawLine    { to { stroke-dashoffset: 0; } }
+@keyframes starIn      { to { opacity: 1; } }
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.28; }
+  50%      { opacity: 0.55; }
+}
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+@keyframes miniStarPulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .nav { padding: 14px 18px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.8rem; }
+  .grid-2col { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
+  .section { padding: 64px 0; }
+  .hero { padding: 100px 0 60px; }
+  .hero-links a { padding: 7px 16px; font-size: 0.82rem; }
+  .constellation-wrap { width: 100%; }
+  .about-text { font-size: 0.98rem; }
+  .info-grid { grid-template-columns: 1fr; }
+  .info-item { padding: 6px 0; }
+  .award-item { font-size: 0.87rem; }
+}
+
+@media (max-width: 400px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 0.74rem; }
+  .hero-name { letter-spacing: 0.15em; }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  html { scroll-behavior: auto; }
+  .cline { stroke-dashoffset: 0; }
+  .cstar { opacity: 1; }
+  .reveal { opacity: 1; transform: none; }
+  .hero-scroll { display: none; }
+}
+
+/* ===== FOCUS VISIBLE GLOBAL ===== */
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+</style>
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="nav" role="navigation" aria-label="主导航">
+  <a href="#" class="nav-logo" aria-label="回到顶部">ZX</a>
+  <ul class="nav-links">
+    <li><a href="#about">关于</a></li>
+    <li><a href="#education">教育</a></li>
+    <li><a href="#experience">实践</a></li>
+    <li><a href="#works">作品</a></li>
+    <li><a href="#awards">获奖</a></li>
+    <li><a href="#contact">联系</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-label="首屏介绍">
+
+    <!-- LIBRA CONSTELLATION SVG -->
+    <div class="constellation-wrap">
+      <svg viewBox="0 0 800 290" xmlns="http://www.w3.org/2000/svg" aria-label="天秤座星象图 — 点击星星查看详情">
+        <!-- Constellation lines (drawn first, behind stars) -->
+        <!-- Top fulcrum to beam ends -->
+        <line x1="390" y1="22" x2="195" y2="96" class="cline" />
+        <line x1="390" y1="22" x2="595" y2="96" class="cline" />
+        <!-- THE BALANCE BEAM (horizontal — signature Libra element) -->
+        <line x1="195" y1="96" x2="595" y2="96" class="cline" />
+        <!-- Beam ends to weighing pans -->
+        <line x1="195" y1="96" x2="300" y2="190" class="cline" />
+        <line x1="595" y1="96" x2="490" y2="190" class="cline" />
+        <!-- Bottom pans connection -->
+        <line x1="300" y1="190" x2="490" y2="190" class="cline" />
+        <!-- Beam detail connections -->
+        <line x1="195" y1="96" x2="325" y2="64" class="cline" />
+        <line x1="595" y1="96" x2="465" y2="64" class="cline" />
+        <!-- Lower extension -->
+        <line x1="490" y1="190" x2="400" y2="250" class="cline" />
+
+        <!-- ===== CLICKABLE STARS ===== -->
+        <!-- Star 1: β (top fulcrum) → #about -->
+        <a href="#about" class="star-link" aria-label="关于我">
+          <g class="star-g" style="transform-origin:390px 22px">
+            <circle cx="390" cy="22" r="38" class="cglow" />
+            <circle cx="390" cy="22" r="14" class="cstar cstar--bright" />
+          </g>
+          <text x="390" y="0" class="star-label">关于我</text>
+          <title>关于我</title>
+        </a>
+
+        <!-- Star 2: α (left beam end) → #education -->
+        <a href="#education" class="star-link" aria-label="教育背景">
+          <g class="star-g" style="transform-origin:195px 96px">
+            <circle cx="195" cy="96" r="30" class="cglow" />
+            <circle cx="195" cy="96" r="10" class="cstar cstar--bright" />
+          </g>
+          <text x="195" y="72" class="star-label">教育背景</text>
+          <title>教育背景</title>
+        </a>
+
+        <!-- Star 3: (right beam end) → #works -->
+        <a href="#works" class="star-link" aria-label="作品成果">
+          <g class="star-g" style="transform-origin:595px 96px">
+            <circle cx="595" cy="96" r="30" class="cglow" />
+            <circle cx="595" cy="96" r="10" class="cstar cstar--bright" />
+          </g>
+          <text x="595" y="72" class="star-label">作品成果</text>
+          <title>作品成果</title>
+        </a>
+
+        <!-- Star 4: γ (left pan) → #experience -->
+        <a href="#experience" class="star-link" aria-label="实践经历">
+          <g class="star-g" style="transform-origin:300px 190px">
+            <circle cx="300" cy="190" r="30" class="cglow" />
+            <circle cx="300" cy="190" r="10" class="cstar cstar--bright" />
+          </g>
+          <text x="300" y="218" class="star-label">实践经历</text>
+          <title>实践经历</title>
+        </a>
+
+        <!-- Star 5: σ (right pan) → #awards -->
+        <a href="#awards" class="star-link" aria-label="获奖记录">
+          <g class="star-g" style="transform-origin:490px 190px">
+            <circle cx="490" cy="190" r="28" class="cglow" />
+            <circle cx="490" cy="190" r="9" class="cstar" />
+          </g>
+          <text x="490" y="218" class="star-label">获奖记录</text>
+          <title>获奖记录</title>
+        </a>
+
+        <!-- Star 6: Beam detail left → GitHub -->
+        <a href="https://github.com/" target="_blank" rel="noopener" class="star-link" aria-label="GitHub">
+          <g class="star-g" style="transform-origin:325px 64px">
+            <circle cx="325" cy="64" r="24" class="cglow" />
+            <circle cx="325" cy="64" r="7.5" class="cstar" />
+          </g>
+          <text x="325" y="42" class="star-label">GitHub</text>
+          <title>GitHub</title>
+        </a>
+
+        <!-- Star 7: Beam detail right → 知乎 -->
+        <a href="https://www.zhihu.com/" target="_blank" rel="noopener" class="star-link" aria-label="知乎">
+          <g class="star-g" style="transform-origin:465px 64px">
+            <circle cx="465" cy="64" r="24" class="cglow" />
+            <circle cx="465" cy="64" r="7.5" class="cstar" />
+          </g>
+          <text x="465" y="42" class="star-label">知乎</text>
+          <title>知乎</title>
+        </a>
+
+        <!-- Star 8: Bottom detail → Email -->
+        <a href="mailto:zhenxi@example.com" class="star-link" aria-label="发送邮件">
+          <g class="star-g" style="transform-origin:400px 250px">
+            <circle cx="400" cy="250" r="24" class="cglow" />
+            <circle cx="400" cy="250" r="7.5" class="cstar" />
+          </g>
+          <text x="400" y="274" class="star-label">Email</text>
+          <title>发送邮件</title>
+        </a>
+      </svg>
+    </div>
+
+    <h1 class="hero-name">彭桢熙</h1>
+    <p class="hero-tagline">软件工程师 / 作家 &nbsp;·&nbsp; 电子科技大学 &nbsp;·&nbsp; 天秤座</p>
+
+    <div class="hero-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:zhenxi@example.com">Email</a>
+      <a href="https://www.zhihu.com/" target="_blank" rel="noopener">知乎</a>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">↓ 点击星图或向下滚动</div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section reveal" id="about" aria-labelledby="about-hdr">
+    <div class="section-hdr"><span id="about-hdr">关于我</span></div>
+
+    <!-- Basic info card -->
+    <div class="card" style="max-width:620px; margin-bottom:28px;">
+      <h3>基本信息</h3>
+      <div class="info-grid">
+        <div class="info-item"><span class="info-label">中文名</span><span class="info-value">彭桢熙</span></div>
+        <div class="info-item"><span class="info-label">外文名</span><span class="info-value">Jancy</span></div>
+        <div class="info-item"><span class="info-label">国籍</span><span class="info-value">中国</span></div>
+        <div class="info-item"><span class="info-label">民族</span><span class="info-value">汉族</span></div>
+        <div class="info-item"><span class="info-label">出生地</span><span class="info-value">四川泸州</span></div>
+        <div class="info-item"><span class="info-label">出生日期</span><span class="info-value">2006年10月10日</span></div>
+        <div class="info-item"><span class="info-label">星座</span><span class="info-value">天秤座</span></div>
+        <div class="info-item"><span class="info-label">毕业院校</span><span class="info-value">电子科技大学</span></div>
+        <div class="info-item"><span class="info-label">职业</span><span class="info-value">软件工程师 / 作家</span></div>
+        <div class="info-item"><span class="info-label">政治面貌</span><span class="info-value">党员</span></div>
+        <div class="info-item"><span class="info-label">代表作品</span><span class="info-value">长篇玄幻小说《星河迢迢长明路》</span></div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <p>2006年出生于<strong>四川省泸州市</strong>。自幼对阅读、写作、音乐产生浓厚兴趣。爱好唱歌、写作、旅游、摄影，特长棋类、主持、写作。性格沉稳细腻，对技术与文字有着同等的热爱——白天写代码，晚上写故事。</p>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section reveal" id="education" aria-labelledby="edu-hdr">
+    <div class="section-hdr"><span id="edu-hdr">教育经历</span></div>
+    <div class="card" style="max-width:600px;">
+      <ul class="timeline">
+        <li>
+          <strong>电子科技大学</strong>&nbsp;&nbsp;<span style="font-size:0.82rem;color:var(--text-dim);">2024 - 至今</span><br>
+          <span style="font-size:0.88rem;">信息与软件工程学院 · 本科在读</span>
+        </li>
+        <li>
+          <strong>泸州市高级中学校</strong>&nbsp;&nbsp;<span style="font-size:0.82rem;color:var(--text-dim);">2021 - 2024</span><br>
+          <span style="font-size:0.88rem;">高中</span>
+        </li>
+        <li>
+          <strong>泸州市泸师附小习之学校</strong>&nbsp;&nbsp;<span style="font-size:0.82rem;color:var(--text-dim);">2018 - 2021</span><br>
+          <span style="font-size:0.88rem;">初中</span>
+        </li>
+        <li>
+          <strong>泸州市实验小学</strong>&nbsp;&nbsp;<span style="font-size:0.82rem;color:var(--text-dim);">2012 - 2018</span><br>
+          <span style="font-size:0.88rem;">小学</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section reveal" id="experience" aria-labelledby="exp-hdr">
+    <div class="section-hdr"><span id="exp-hdr">实践经历</span></div>
+
+    <div class="grid-2col">
+      <!-- Work Experience -->
+      <div class="card">
+        <h3>校内职务</h3>
+        <div class="subtitle">学生工作与志愿服务</div>
+        <ul class="timeline">
+          <li>
+            <strong>2025 / 2026级新生导生</strong><br>
+            <span style="font-size:0.84rem;">电子科技大学信息与软件工程学院</span>
+          </li>
+          <li>
+            <strong>2022 / 2023级辅导员助理</strong><br>
+            <span style="font-size:0.84rem;">信息与软件工程学院</span>
+          </li>
+          <li>
+            <strong>校学生会外联部</strong><br>
+            <span style="font-size:0.84rem;">活动策划、校外商家对接</span>
+          </li>
+          <li>
+            <strong>院团委实践部</strong><br>
+            <span style="font-size:0.84rem;">团费收取、支教队成果展</span>
+          </li>
+          <li>
+            <strong>体育部助管</strong><br>
+            <span style="font-size:0.84rem;">协助体测进行</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Positions -->
+      <div class="card">
+        <h3>社会任职</h3>
+        <div class="subtitle">校外实践与公益活动</div>
+        <ul class="timeline">
+          <li>
+            <strong>泸州市江阳区作家协会成员</strong><br>
+            <span style="font-size:0.84rem;">四川省泸州市</span>
+          </li>
+          <li>
+            <strong>未央爱心团队宣传部部长</strong><br>
+            <span style="font-size:0.84rem;">前往古蔺箭竹县苗族乡参与支教</span>
+          </li>
+          <li>
+            <strong>理论宣讲团实践队队长</strong><br>
+            <span style="font-size:0.84rem;">"信言软语"大学生理论宣讲团，前往凉山彝族自治州参与三下乡活动</span>
+          </li>
+          <li style="padding-bottom:0;">
+            <strong>连续四年优秀共青团员/干部</strong><br>
+            <span style="font-size:0.84rem;">2022 - 2026</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORKS ===== -->
+  <section class="section reveal" id="works" aria-labelledby="works-hdr">
+    <div class="section-hdr"><span id="works-hdr">作品成果</span></div>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>《星河迢迢长明路》</h3>
+        <p>长篇玄幻小说，2024年发表于番茄小说平台，累计超千人阅读。以宏大世界观与细腻人物刻画见长。</p>
+        <div class="tags">
+          <span class="tag">玄幻</span>
+          <span class="tag">长篇小说</span>
+          <span class="tag">番茄小说</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>《陶渊明的故事》</h3>
+        <p>2018年发表于《全国中学生优秀作品选》，以独特视角讲述田园诗人的一生。</p>
+        <div class="tags">
+          <span class="tag">散文</span>
+          <span class="tag">发表作品</span>
+          <span class="tag">2018</span>
+        </div>
+      </div>
+
+      <a class="project-card" href="#" target="_blank" rel="noopener">
+        <h3>建筑能源监控与优化系统</h3>
+        <p>基于 LLM 与多模态时序感知技术，实现建筑能耗的智能监测与动态优化调度，2026年发布。</p>
+        <div class="tags">
+          <span class="tag">LLM</span>
+          <span class="tag">多模态</span>
+          <span class="tag">时序分析</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/Peng-jancy/group-4--framework" target="_blank" rel="noopener">
+        <h3>自搭框架小车自动驾驶系统</h3>
+        <p>基于 CNN 的自搭框架自动驾驶系统，综设项目开源代码，可在 GitHub 查看完整实现。</p>
+        <div class="tags">
+          <span class="tag">CNN</span>
+          <span class="tag">自动驾驶</span>
+          <span class="tag">开源</span>
+          <span class="tag">GitHub</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS ===== -->
+  <section class="section reveal" id="awards" aria-labelledby="awards-hdr">
+    <div class="section-hdr"><span id="awards-hdr">获奖记录</span></div>
+
+    <div class="awards-list">
+      <div class="award-year">2026</div>
+      <div class="award-items">
+        <div class="award-item"><span class="award-name">服务创新与外包设计大赛西部赛区三等奖</span></div>
+        <div class="award-item"><span class="award-name">全国大学生计算机设计大赛四川省三等奖</span></div>
+        <div class="award-item"><span class="award-name">全国大学生节能减排科技与社会实践竞赛四川省三等奖</span></div>
+        <div class="award-item"><span class="award-name">"挑战杯"电子科技大学三等奖</span><span class="award-from">电子科技大学</span></div>
+      </div>
+
+      <div class="award-year">2023</div>
+      <div class="award-items">
+        <div class="award-item"><span class="award-name">"忠山之秋"高中组辩论赛冠军</span><span class="award-from">泸州市共青团委</span></div>
+      </div>
+
+      <div class="award-year">2016</div>
+      <div class="award-items">
+        <div class="award-item"><span class="award-name">奥林匹克数学竞赛小学组全国一等奖</span><span class="award-from">奥数竞赛组委会</span></div>
+        <div class="award-item"><span class="award-name">奥林匹克作文竞赛小学组全国三等奖</span><span class="award-from">奥文竞赛组委会</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer reveal" id="contact">
+  <div class="footer-border">
+    <div class="const-divider" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:zhenxi@example.com">Email</a>
+      <a href="https://www.zhihu.com/" target="_blank" rel="noopener">知乎</a>
+      <a href="#" target="_blank" rel="noopener">博客</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 彭桢熙 &mdash; 星图指引方向</p>
+  </div>
+</footer>
+
+<script>
+/* ===== STARFIELD BACKGROUND ===== */
+(function() {
+  var canvas = document.getElementById('starfield');
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  var animId;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed();
+  }
+
+  function seed() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var count = Math.floor((w * h) / 6000);
+    stars = [];
+    for (var i = 0; i < count; i++) {
+      var isGold = Math.random() < 0.50;
+      stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2.2 + 0.7,
+        baseAlpha: isGold ? (Math.random() * 0.35 + 0.18) : (Math.random() * 0.35 + 0.20),
+        speed: Math.random() * 0.008 + 0.002,
+        phase: Math.random() * Math.PI * 2,
+        isGold: isGold
+      });
+    }
+  }
+
+  function draw(time) {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    ctx.clearRect(0, 0, w, h);
+
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var alpha;
+      if (reducedMotion) {
+        alpha = s.baseAlpha;
+      } else {
+        alpha = s.baseAlpha + Math.sin(time * s.speed + s.phase) * 0.1;
+        alpha = Math.max(0.04, alpha);
+      }
+
+      if (s.isGold) {
+        ctx.fillStyle = 'rgba(220,160,50,' + alpha + ')';
+      } else {
+        ctx.fillStyle = 'rgba(255,255,250,' + alpha + ')';
+      }
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  resize();
+  animId = requestAnimationFrame(draw);
+  window.addEventListener('resize', function() {
+    if (animId) cancelAnimationFrame(animId);
+    resize();
+    animId = requestAnimationFrame(draw);
+  });
+
+  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', function(e) {
+    reducedMotion = e.matches;
+  });
+})();
+
+/* ===== NAV SCROLL EFFECT ===== */
+(function() {
+  var nav = document.querySelector('.nav');
+  var ticking = false;
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        if (window.scrollY > 60) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+/* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+(function() {
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        var navH = document.querySelector('.nav').offsetHeight;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 20;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+/* ===== SCROLL REVEAL ===== */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>
